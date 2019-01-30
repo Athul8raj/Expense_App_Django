@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'social_django',
+    'coverage'
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ExpenseApp.urls'
+
+APPEND_SLASH = True
 
 TEMPLATES = [
     {
@@ -141,7 +144,7 @@ LOGIN_URL ='login'
 LOGOUT_URL = 'logout'
 
 ##Social Media login settings
-SOCIAL_AUTH_GITHUB_KEY = '0b2de37c9a370c0fbdee'
+SOCIAL_AUTH_GITHUB_KEY = '0b2de37c9a370c0fbdeeed'
 SOCIAL_AUTH_GITHUB_SECRET = '532dda8c1a401bd48611a0d4ee08f5dc46122593'
 
 SOCIAL_AUTH_TWITTER_KEY = '9TD12xahCWCDdyLzpmw61GSM9'
