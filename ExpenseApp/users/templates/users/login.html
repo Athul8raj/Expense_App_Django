@@ -1,0 +1,39 @@
+{% extends 'users/layout.html' %}
+{% load crispy_forms_tags %}
+{%  block body %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="w-auto">Log In</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Login</button>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted"> Sign up using
+        <a class="ml-2" href="{% url 'social:begin' 'twitter' %}">
+            <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+            </a>
+         <a class="ml-2" href="{% url 'social:begin' 'facebook' %}">
+            <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+            </a>
+        <a class="ml-2" href="{% url 'social:begin' 'github' %}">
+            <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+            </a>   
+        </small>
+        <br>
+    </div>
+</div>
+    
+{% endblock %}

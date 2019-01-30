@@ -1,0 +1,25 @@
+{% extends 'layout2.html' %}
+{% block body %}
+
+{% for expense in expenses %}
+<div class="container-fluid">
+<div class="row">
+<div class="col col-md-3">
+<div class="card h-100" style="width: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{expense.exp_name}}</h5>
+    <p class="card-text">{{expense.total_price}}
+    <br>{{expense.date_uploaded}}<br>
+    {% ifequal expense.created_by|stringformat:"s" user.username %}
+    <a href="{% url 'delete_expenses' id_value=expense.id %}" class="btn btn-danger">Delete</a>
+    {% endifequal %}
+    <a href="{% url 'view_expense' value=expense.id %}" class="btn btn-info">View</a>
+    </p>
+  </div>
+</div>
+</div>
+</div>
+<br>
+</div>
+{% endfor %}
+{% endblock %}

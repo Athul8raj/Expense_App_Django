@@ -1,0 +1,12 @@
+{% extends 'users/layout.html' %}
+{%  block body %}
+<h2> You have been logged out</h2>
+<div class="container-fluid">
+<br>
+    <small class="text-muted"> Want to Log in Again?
+        <a class="ml-2" href="{% url 'login' %}">Log In</a>
+    </small>
+</div>
+
+    
+{% endblock %}

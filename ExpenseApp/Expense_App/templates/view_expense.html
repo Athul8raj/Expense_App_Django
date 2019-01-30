@@ -1,0 +1,13 @@
+{% extends 'layout2.html' %}
+{% block body %}
+<div class="container-fluid">
+<ul>
+{% for exp in expense %}
+<li>{{ exp.exp_name }}</li>
+    <li>{{ exp.date_uploaded }}</li>
+    <li>{{ exp.total_price }}</li>
+    <img src="{{exp.get_absolute_image}}">
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

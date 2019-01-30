@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+  <form method="get">
+    {{ filter.form|crispy }}
+    <button type="submit" class="btn btn-info">Search</button>
+  </form>
+  <ul>
+  {% for field in filter.qs %}
+    <li>{{ field.exp_name }}</li>
+    <li>{{ field.date_uploaded }}</li>
+    <li>{{ field.total_price }}</li>
+    <img src="{{field.get_absolute_image}}">
+  {% endfor %}
+  </ul>
+{% endblock %}
